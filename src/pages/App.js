@@ -50,6 +50,12 @@ function App() {
     return () => clearInterval(timer);
   }, [plusOnes]);
 
+
+  useEffect(() => {
+    console.log(window?.Telegram?.WebApp?.initDataUnsafe?.user);
+  }, []);
+
+
   return (
     <Router>
       <div className="App">
