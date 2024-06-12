@@ -51,8 +51,8 @@ function App() {
           <p className="App-intro">Кликай по кнопке, чтобы заработать очки!</p>
         </header>
         <div className="Small-blocks">
-          <div className="Small-block">Блок 1</div>
-          <div className="Small-block">Блок 2</div>
+          <div className="Small-block">Прибыль за клик</div>
+          <div className="Small-block">Прибыль в час</div>
         </div>
         <div className="Score">Очки: {score}</div>
         <div className="Progress-bar-wrapper">
@@ -62,7 +62,7 @@ function App() {
               style={{ width: `${progress}%` }}
             ></div>
           </div>
-          <div className="Level">Уровень: {level}</div>
+          <div className="Level">level: {level}</div>
         </div>
 
         <button className="Click-button" onClick={incrementScore}>

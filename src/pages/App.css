@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   padding: 20px;
-  background-color: #f0f2f5;
+  background-color: #1C1F24;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -42,19 +42,24 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 48%; /* Ширина каждого блока */
   text-align: center;
+  background-color: #282B30; 
+  border-color: #2D2F35;
+  color: #F9FC79;
 }
 
 .Small-block + .Small-block {
   margin-left: 4%; /* Отступ между блоками */
+  background-color: #282B30; 
+  border-color: #2D2F35;
+  color: #00DCCF;
 }
 
 .Click-button {
   position: relative;
   padding: 15px 30px;
   font-size: 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
+  background-color: #9F03FF3D;
+  border-color: #CA74FF;
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -68,17 +73,20 @@
 }
 
 .Click-button:hover {
-  background-color: #0056b3;
+  background-color: #9F03FF3D;
   transform: scale(1.05);
+
 }
 
 .Score, .Level {
   font-size: 24px;
   margin-top: 20px;
+  color: #FFFFFF;
+  font-family: TT Firs Neue;
 }
-
-
-
+.Level{
+  color:gray;
+}
 
 .Progress-bar-wrapper {
   position: relative;
@@ -97,13 +105,14 @@
 
 .Progress-bar {
   height: 20px;
-  background: linear-gradient(90deg, #4b0082, #9370db);
+  background:linear-gradient(90deg, #CB97EC 15.23%, #A279FC 34.35%, #7996FC 53.05%, #79CDFC 68.78%, #79E4FC 78.13%, #E5FC88 93%);
+  ;
   border-radius: 8px 0 0 8px;
   transition: width 0.3s ease;
 }
 
 .Level {
-  font-size: 18px; /* Уменьшаем размер текста */
+  font-size: 23px; /* Уменьшаем размер текста */
   position: absolute; /* Позиционируем абсолютно */
   top: -50px; /* Располагаем выше Progress bar */
   right: 10px; /* По правому краю */
