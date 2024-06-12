@@ -16,7 +16,9 @@ function App() {
   const incrementScore = (event) => {
     const newScore = score + 1;
     setScore(newScore);
-    const newProgress = Math.min((newScore / (level * 100)) * 100, 100);
+
+    const clicksThisLevel = newScore % 100;
+    const newProgress = (clicksThisLevel / 100) * 100;
     setProgress(newProgress);
 
     const { clientX, clientY } = event;
@@ -30,8 +32,7 @@ function App() {
   useEffect(() => {
     if (score >= level * 100) {
       setLevel((prevLevel) => prevLevel + 1);
-      setScore(0);
-      setProgress(0);
+      setProgress(0); 
     }
     document.title = "ClickerHub";
   }, [score, level]);
@@ -102,4 +103,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;;
