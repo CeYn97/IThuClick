@@ -55,7 +55,7 @@ function App() {
           <div className="Small-block">Прибыль за клик</div>
           <div className="Small-block">Прибыль в час</div>
         </div>
-        <div className="Score">Очки: {score}</div>
+        <div className="Score"> {score}</div>
         <div className="Progress-bar-wrapper">
           <div className="Progress-bar-container">
             <div
@@ -86,13 +86,13 @@ function App() {
         </Routes>
         <footer className="Footer">
           <Link to="/kopilka" className="Footer-item">
-            Копилка
+            Coinbox
           </Link>
           <Link to="/druzya" className="Footer-item">
-            Друзья
+            Friends
           </Link>
           <Link to="/merch" className="Footer-item">
-            Мерч
+            Merch
           </Link>
           <Link to="/earn" className="Footer-item">
             Earn

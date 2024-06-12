@@ -7,6 +7,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  border: #9F03FF3D;
 }
 
 .App-header {
@@ -31,7 +32,7 @@
 .Small-blocks {
   display: flex;
   justify-content: space-between;
-  width: 80%; /* Ширина для центрирования */
+  width: 20%; /* Ширина для центрирования */
   margin-bottom: 20px; /* Отступ снизу */
 }
 
@@ -60,13 +61,17 @@
   font-size: 20px;
   background-color: #9F03FF3D;
   border-color: #CA74FF;
-  border-radius: 50%; 
+  border-radius: 100%; 
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   margin-top: 20px;
   box-shadow: 0 4px 32px #d1afaf40;
-  width: 150px;
-  height: 150px;
+
+  width: 300px;
+height: 300px;
+border: 15px 0px 0px 0px;
+opacity: 0.7px;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -80,10 +85,10 @@
 
 .Score,
 .Level {
-  font-size: 24px;
+  font-size: 104px;
   margin-top: 20px;
   color: #FFFFFF;
-  font-family: TT Firs Neue;
+  font-family: sans-serif;
 }
 .Level{
   color:gray;
@@ -147,6 +152,7 @@
   margin-top: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 90%;
+  font-family: TT Firs Neue;
 }
 
 .Footer-item {
