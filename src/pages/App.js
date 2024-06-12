@@ -91,19 +91,19 @@ function App() {
         </Routes>
         <footer className="Footer">
           <Link to="/kopilka" className="Footer-item Footer-active">
-            <img src={shopIcon1} className="Footer-icon" />
+            <img alt="menu icon" src={shopIcon1} className="Footer-icon" />
             Копилка
           </Link>
           <Link to="/merch" className="Footer-item">
-            <img src={shopIcon2} className="Footer-icon" />
+            <img alt="menu icon" src={shopIcon2} className="Footer-icon" />
             Мерч
           </Link>
           <Link to="/druzya" className="Footer-item">
-            <img src={shopIcon3} className="Footer-icon" />
+            <img alt="menu icon" src={shopIcon3} className="Footer-icon" />
             Друзья
           </Link>
           <Link to="/earn" className="Footer-item">
-            <img src={shopIcon4} className="Footer-icon" />
+            <img alt="menu icon" src={shopIcon4} className="Footer-icon" />
             Earn
           </Link>
         </footer>
