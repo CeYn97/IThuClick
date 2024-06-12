@@ -7,6 +7,11 @@ import FriendsPage from "./FriendsPage";
 import MerchPage from "./MerchPage";
 import EarnPage from "./EarnPage";
 
+import shopIcon1 from "../image/Vector.svg";
+import shopIcon2 from "../image/shop-svgrepo-com 1.svg";
+import shopIcon3 from "../image/friendship-svgrepo-com 1.svg";
+import shopIcon4 from "../image/list-clipboard-svgrepo-com.svg";
+
 function App() {
   const [score, setScore] = useState(0);
   const [progress, setProgress] = useState(0);
@@ -32,7 +37,7 @@ function App() {
   useEffect(() => {
     if (score >= level * 100) {
       setLevel((prevLevel) => prevLevel + 1);
-      setProgress(0); 
+      setProgress(0);
     }
     document.title = "ClickerHub";
   }, [score, level]);
@@ -85,16 +90,20 @@ function App() {
           <Route path="/earn" element={<EarnPage />} />
         </Routes>
         <footer className="Footer">
-          <Link to="/kopilka" className="Footer-item">
-            Coinbox
-          </Link>
-          <Link to="/druzya" className="Footer-item">
-            Friends
+          <Link to="/kopilka" className="Footer-item Footer-active">
+            <img src={shopIcon1} className="Footer-icon" />
+            Копилка
           </Link>
           <Link to="/merch" className="Footer-item">
-            Merch
+            <img src={shopIcon2} className="Footer-icon" />
+            Мерч
+          </Link>
+          <Link to="/druzya" className="Footer-item">
+            <img src={shopIcon3} className="Footer-icon" />
+            Друзья
           </Link>
           <Link to="/earn" className="Footer-item">
+            <img src={shopIcon4} className="Footer-icon" />
             Earn
           </Link>
         </footer>
@@ -103,4 +112,4 @@ function App() {
   );
 }
 
-export default App;;
+export default App;

@@ -1,13 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: #1c1f24;
+  color: white;
+}
+
 .App {
   text-align: center;
   padding: 20px;
-  background-color: #1C1F24;
-  height: 100vh;
+  background-color: inherit;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  border: #9F03FF3D;
+  color: inherit;
 }
 
 .App-header {
@@ -43,25 +54,25 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 48%; /* Ширина каждого блока */
   text-align: center;
-  background-color: #282B30; 
-  border-color: #2D2F35;
-  color: #F9FC79;
+  background-color: #282b30;
+  border-color: #2d2f35;
+  color: #f9fc79;
 }
 
 .Small-block + .Small-block {
   margin-left: 4%; /* Отступ между блоками */
-  background-color: #282B30; 
-  border-color: #2D2F35;
-  color: #00DCCF;
+  background-color: #282b30;
+  border-color: #2d2f35;
+  color: #00dccf;
 }
 
 .Click-button {
   position: relative;
   padding: 15px 30px;
   font-size: 20px;
-  background-color: #9F03FF3D;
-  border-color: #CA74FF;
-  border-radius: 50%; 
+  background-color: #9f03ff3d;
+  border-color: #ca74ff;
+  border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   margin-top: 20px;
@@ -74,20 +85,19 @@
 }
 
 .Click-button:hover {
-  background-color: #9F03FF3D;
+  background-color: #9f03ff3d;
   transform: scale(1.05);
-
 }
 
 .Score,
 .Level {
   font-size: 24px;
   margin-top: 20px;
-  color: #FFFFFF;
+  color: #ffffff;
   font-family: sans-serif;
 }
-.Level{
-  color:gray;
+.Level {
+  color: gray;
 }
 
 .Progress-bar-wrapper {
@@ -107,8 +117,15 @@
 
 .Progress-bar {
   height: 20px;
-  background:linear-gradient(90deg, #CB97EC 15.23%, #A279FC 34.35%, #7996FC 53.05%, #79CDFC 68.78%, #79E4FC 78.13%, #E5FC88 93%);
-  ;
+  background: linear-gradient(
+    90deg,
+    #cb97ec 15.23%,
+    #a279fc 34.35%,
+    #7996fc 53.05%,
+    #79cdfc 68.78%,
+    #79e4fc 78.13%,
+    #e5fc88 93%
+  );
   border-radius: 8px 0 0 8px;
   transition: width 0.3s ease;
 }
@@ -122,7 +139,7 @@
 
 .plus-one {
   position: absolute;
-  color:#c8ff00;
+  color: #c8ff00;
   font-size: 35px;
   animation: fadeOut 1s forwards;
   pointer-events: none;
@@ -143,7 +160,7 @@
   display: flex;
   justify-content: center;
   background-color: #282c34;
-  padding: 20px;
+  padding: 10px;
   border-radius: 20px;
   margin-top: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -152,13 +169,31 @@
 }
 
 .Footer-item {
-  color: black;
+  color: white;
+  font-weight: 500;
+  letter-spacing: -0.5px;
   text-decoration: none;
   cursor: pointer;
   margin: 10px;
   text-align: center;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
   padding: 10px;
-  background-color: white;
+  background-color: transparent;
   border-radius: 5px;
+  font-size: 12px;
+  line-height: 14px;
+
+  filter: brightness(0.7);
+}
+
+.Footer-active {
+  filter: brightness(1);
+}
+
+.Footer-icon {
+  height: 27px;
+  width: auto;
 }
