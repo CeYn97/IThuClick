@@ -11,6 +11,7 @@ import shopIcon1 from "../image/Vector.svg";
 import shopIcon2 from "../image/shop-svgrepo-com 1.svg";
 import shopIcon3 from "../image/friendship-svgrepo-com 1.svg";
 import shopIcon4 from "../image/list-clipboard-svgrepo-com.svg";
+import mainVector from "../image/Main.svg";
 
 function App() {
   const [score, setScore] = useState(0);
@@ -52,10 +53,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <header className="App-header">
-          <h1>HubCoin</h1>
-          <p className="App-intro">Бот</p>
-        </header>
         <div className="Small-blocks">
           <div className="Small-block">Прибыль за клик</div>
           <div className="Small-block">Прибыль в час</div>
@@ -72,7 +69,7 @@ function App() {
         </div>
 
         <button className="Click-button" onClick={incrementScore}>
-          Кликни здесь!
+          <img alt="menu icon" src={mainVector} className="main-vector" />
           {plusOnes.map((plusOne) => (
             <div
               key={plusOne.id}

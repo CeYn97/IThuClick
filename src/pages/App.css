@@ -3,7 +3,7 @@
 }
 
 body {
-  padding: 0;
+  padding: 40px 0px 0;
   margin: 0;
   background: #1c1f24;
   color: white;
@@ -19,6 +19,13 @@ body {
   align-items: center;
   justify-content: space-between;
   color: inherit;
+
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  border-top: 2px solid #af61df;
+
+  box-shadow: 0 4px 62px #db00ff87;
+  padding-bottom: 20px;
 }
 
 .App-header {
@@ -68,25 +75,31 @@ body {
 
 .Click-button {
   position: relative;
-  padding: 15px 30px;
-  font-size: 20px;
+  padding: 0px;
   background-color: #9f03ff3d;
   border-color: #ca74ff;
+  border-width: 15px;
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   margin-top: 20px;
-  box-shadow: 0 4px 32px #d1afaf40;
-  width: 150px;
-  height: 150px;
+  box-shadow: 0 4px 32px #ca74ffac;
+  width: 300px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-style: solid;
 }
 
 .Click-button:hover {
   background-color: #9f03ff3d;
-  transform: scale(1.05);
+  transform: scale(1.03);
+}
+
+.Click-button > img {
+  transform: translate(-5px, 10px);
+  width: 100%;
 }
 
 .Score,
@@ -160,11 +173,12 @@ body {
   display: flex;
   justify-content: center;
   background-color: #282c34;
-  padding: 10px;
+  padding: 0px;
   border-radius: 20px;
   margin-top: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 90%;
+  gap: 10px;
   font-family: TT Firs Neue;
 }
 
@@ -179,8 +193,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
-  padding: 10px;
+  gap: 4px;
+  padding: 4px;
   background-color: transparent;
   border-radius: 5px;
   font-size: 12px;
@@ -196,4 +210,7 @@ body {
 .Footer-icon {
   height: 27px;
   width: auto;
+}
+
+.main-vector {
 }
