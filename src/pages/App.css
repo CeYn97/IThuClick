@@ -32,7 +32,7 @@
 .Small-blocks {
   display: flex;
   justify-content: space-between;
-  width: 20%; /* Ширина для центрирования */
+  width: 80%; /* Ширина для центрирования */
   margin-bottom: 20px; /* Отступ снизу */
 }
 

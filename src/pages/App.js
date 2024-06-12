@@ -55,7 +55,7 @@ function App() {
           <div className="Small-block">Прибыль за клик</div>
           <div className="Small-block">Прибыль в час</div>
         </div>
-        <div className="Score"> {score}</div>
+        <div className="Score">Coins: {score}</div>
         <div className="Progress-bar-wrapper">
           <div className="Progress-bar-container">
             <div
