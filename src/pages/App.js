@@ -50,15 +50,16 @@ function App() {
     return () => clearInterval(timer);
   }, [plusOnes]);
 
-
   useEffect(() => {
     console.log(window?.Telegram?.WebApp?.initDataUnsafe?.user);
   }, []);
 
-
   return (
     <Router>
       <div className="App">
+        <div>
+          {JSON.stringify(window?.Telegram?.WebApp?.initDataUnsafe?.user)}
+        </div>
         <div className="Small-blocks">
           <div className="Small-block">Прибыль за клик</div>
           <div className="Small-block">Прибыль в час</div>
