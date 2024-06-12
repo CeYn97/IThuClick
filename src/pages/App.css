@@ -60,11 +60,11 @@
   font-size: 20px;
   background-color: #9F03FF3D;
   border-color: #CA74FF;
-  border-radius: 50%;
+  border-radius: 50%; 
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   margin-top: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 32px #d1afaf40;
   width: 150px;
   height: 150px;
   display: flex;
@@ -121,7 +121,7 @@
 
 .plus-one {
   position: absolute;
-  color: rgb(0, 0, 0);
+  color:#c8ff00;
   font-size: 35px;
   animation: fadeOut 1s forwards;
   pointer-events: none;

@@ -47,8 +47,8 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <h1>ClickerHub</h1>
-          <p className="App-intro">Кликай по кнопке, чтобы заработать очки!</p>
+          <h1>HubCoin</h1>
+          <p className="App-intro">Бот</p>
         </header>
         <div className="Small-blocks">
           <div className="Small-block">Прибыль за клик</div>
