@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  NavLink,
+} from "react-router-dom";
 
 import "./App.css";
-import CopilkaPage from "./CopilkaPage";
 import FriendsPage from "./FriendsPage";
 import MerchPage from "./MerchPage";
 import EarnPage from "./EarnPage";
@@ -50,61 +54,92 @@ function App() {
     return () => clearInterval(timer);
   }, [plusOnes]);
 
-  const userId = window?.Telegram?.WebApp?.initDataUnsafe?.user?.id
+  const userId = window?.Telegram?.WebApp?.initDataUnsafe?.user?.id;
 
   return (
     <Router>
       <div className="App">
-        <div className="Small-blocks">
-          <div className="Small-block">Прибыль за клик</div>
-          <div className="Small-block">Прибыль в час</div>
-        </div>
-        <div className="Score">Coins: {score}</div>
-        <div className="Progress-bar-wrapper">
-          <div className="Progress-bar-container">
-            <div
-              className="Progress-bar"
-              style={{ width: `${progress}%` }}
-            ></div>
-          </div>
-          <div className="Level">level: {level}</div>
-        </div>
-
-        <button className="Click-button" onClick={incrementScore}>
-          <img alt="menu icon" src={mainVector} className="main-vector" />
-          {plusOnes.map((plusOne) => (
-            <div
-              key={plusOne.id}
-              className="plus-one"
-              style={{ left: plusOne.x, top: plusOne.y }}
-            >
-              +1
-            </div>
-          ))}
-        </button>
-        <Routes>
-          <Route path="/kopilka" element={<CopilkaPage />} />
-          <Route path="/druzya" element={<FriendsPage />} />
-          <Route path="/merch" element={<MerchPage />} />
-          <Route path="/earn" element={<EarnPage />} />
-        </Routes>
+        <main className="App-main">
+          <Routes>
+            <Route path="/druzya" element={<FriendsPage />} />
+            <Route path="/merch" element={<MerchPage />} />
+            <Route path="/earn" element={<EarnPage />} />
+            <Route
+              path="/"
+              element={
+                <>
+                  <div className="Small-blocks">
+                    <div className="Small-block">Прибыль за клик</div>
+                    <div className="Small-block">Прибыль в час</div>
+                  </div>
+                  <div className="Score">Coins: {score}</div>
+                  <div className="Progress-bar-wrapper">
+                    <div className="Progress-bar-container">
+                      <div
+                        className="Progress-bar"
+                        style={{ width: `${progress}%` }}
+                      ></div>
+                    </div>
+                    <div className="Level">level: {level}</div>
+                  </div>
+                  <button className="Click-button" onClick={incrementScore}>
+                    <img
+                      alt="menu icon"
+                      src={mainVector}
+                      className="main-vector"
+                    />
+                    {plusOnes.map((plusOne) => (
+                      <div
+                        key={plusOne.id}
+                        className="plus-one"
+                        style={{ left: plusOne.x, top: plusOne.y }}
+                      >
+                        +1
+                      </div>
+                    ))}
+                  </button>
+                </>
+              }
+            />
+          </Routes>
+        </main>
         <footer className="Footer">
-          <Link to="/kopilka" className="Footer-item Footer-active">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "Footer-item Footer-active" : "Footer-item"
+            }
+          >
             <img alt="menu icon" src={shopIcon1} className="Footer-icon" />
             Копилка
-          </Link>
-          <Link to="/merch" className="Footer-item">
-            <img alt="menu icon" src={shopIcon2} className="Footer-icon" />
-            Мерч
-          </Link>
-          <Link to="/druzya" className="Footer-item">
+          </NavLink>
+          <NavLink
+            to="/druzya"
+            className={({ isActive }) =>
+              isActive ? "Footer-item Footer-active" : "Footer-item"
+            }
+          >
             <img alt="menu icon" src={shopIcon3} className="Footer-icon" />
             Друзья
-          </Link>
-          <Link to="/earn" className="Footer-item">
+          </NavLink>
+          <NavLink
+            to="/merch"
+            className={({ isActive }) =>
+              isActive ? "Footer-item Footer-active" : "Footer-item"
+            }
+          >
+            <img alt="menu icon" src={shopIcon2} className="Footer-icon" />
+            Мерч
+          </NavLink>
+          <NavLink
+            to="/earn"
+            className={({ isActive }) =>
+              isActive ? "Footer-item Footer-active" : "Footer-item"
+            }
+          >
             <img alt="menu icon" src={shopIcon4} className="Footer-icon" />
             Earn
-          </Link>
+          </NavLink>
         </footer>
       </div>
     </Router>

@@ -47,6 +47,16 @@ body {
   margin: 0;
 }
 
+.App-main {
+  flex: 1; /* Занимает оставшееся пространство */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+
 .Small-blocks {
   display: flex;
   justify-content: space-between;
