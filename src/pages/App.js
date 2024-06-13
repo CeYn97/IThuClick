@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 
 import "./App.css";
-import CopilkaPage from "./CopilkaPage";
 import FriendsPage from "./FriendsPage";
 import MerchPage from "./MerchPage";
 import EarnPage from "./EarnPage";
@@ -56,7 +55,7 @@ function App() {
     return () => clearInterval(timer);
   }, [plusOnes]);
 
-  const userId = window?.Telegram?.WebApp?.initDataUnsafe?.user?.id;
+  // const userId = window?.Telegram?.WebApp?.initDataUnsafe?.user?.id;
 
   return (
     <Router>
@@ -118,12 +117,6 @@ function App() {
             />
           </Routes>
         </main>
-        <Routes>
-          <Route path="/kopilka" element={<CopilkaPage />} />
-          <Route path="/druzya" element={<FriendsPage />} />
-          <Route path="/merch" element={<MerchPage />} />
-          <Route path="/earn" element={<EarnPage />} />
-        </Routes>
         <footer className="Footer">
           <NavLink
             to="/"
