@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import "./App.css";
+import CopilkaPage from "./CopilkaPage";
 import FriendsPage from "./FriendsPage";
 import MerchPage from "./MerchPage";
 import EarnPage from "./EarnPage";
@@ -16,6 +17,7 @@ import shopIcon2 from "../image/shop-svgrepo-com 1.svg";
 import shopIcon3 from "../image/friendship-svgrepo-com 1.svg";
 import shopIcon4 from "../image/list-clipboard-svgrepo-com.svg";
 import mainVector from "../image/Main.svg";
+import coin from "../image/Монета.svg";
 
 function App() {
   const [score, setScore] = useState(0);
@@ -69,10 +71,23 @@ function App() {
               element={
                 <>
                   <div className="Small-blocks">
-                    <div className="Small-block">Прибыль за клик</div>
-                    <div className="Small-block">Прибыль в час</div>
+                    <div className="Small-block">
+                      Прибыль за тап
+                      <div className="score__smallBlock">
+                        <img
+                          alt="menu icon"
+                          src={coin}
+                          className="coin__Style"
+                        />
+                        +1
+                      </div>
+                    </div>
+                    <div className="Small-block score__smallBlock2">
+                      Прибыль в час
+                      <div className="score__div">+5к</div>
+                    </div>
                   </div>
-                  <div className="Score">Coins: {score}</div>
+                  <div className="Score">{score}</div>
                   <div className="Progress-bar-wrapper">
                     <div className="Progress-bar-container">
                       <div
@@ -103,6 +118,12 @@ function App() {
             />
           </Routes>
         </main>
+        <Routes>
+          <Route path="/kopilka" element={<CopilkaPage />} />
+          <Route path="/druzya" element={<FriendsPage />} />
+          <Route path="/merch" element={<MerchPage />} />
+          <Route path="/earn" element={<EarnPage />} />
+        </Routes>
         <footer className="Footer">
           <NavLink
             to="/"
