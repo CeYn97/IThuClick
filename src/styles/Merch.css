@@ -23,5 +23,6 @@
 @media only screen and (max-width: 600px) {
   .merch-block {
     flex: auto;
+    width: 28%;
   }
 }
