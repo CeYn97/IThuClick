@@ -10,19 +10,18 @@
 }
 
 .merch-block {
-    background-color: #ffffff;
-    font-size: 20px;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 48%;
-    text-align: center;
-    background-color: #282b30;
-    border-color: #2d2f35;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 173px;
+  height: 119px;
+  text-align: center;
+  background-color: #282b30;
+  border-color: #2d2f35;
 }
 
 @media only screen and (max-width: 600px) {
   .merch-block {
-    flex-basis: calc(50% - 20px);
+    flex: auto;
   }
 }
