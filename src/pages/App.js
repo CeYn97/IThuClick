@@ -90,7 +90,7 @@ function App() {
 
                   <div className="Score">
                     <img alt="menu icon" src={mainCoin} className="" />
-                    10 385 456{score}
+                    {score}
                   </div>
 
                   <div className="Progress-bar-wrapper">
