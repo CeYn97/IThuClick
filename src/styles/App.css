@@ -108,10 +108,6 @@ body {
   justify-content: center;
 }
 
-.score__div {
-  padding-top: 3px;
-}
-
 .Click-button {
   position: relative;
   padding: 0px;
@@ -248,5 +244,14 @@ body {
 }
 
 .coin__Style {
-  padding-top: 3px;
+  padding-top: 1px;
+  padding-right: 3px;
+  width: 22px;
+  height: 22px;
+}
+
+.mainCoin {
+  width: 78px;
+  height: 78px;
+  padding-right: 10px;
 }

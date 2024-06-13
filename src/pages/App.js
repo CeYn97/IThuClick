@@ -16,8 +16,7 @@ import shopIcon2 from "../image/shop-svgrepo-com 1.svg";
 import shopIcon3 from "../image/friendship-svgrepo-com 1.svg";
 import shopIcon4 from "../image/list-clipboard-svgrepo-com.svg";
 import mainVector from "../image/Main.svg";
-import coin from "../image/Монета.svg";
-import mainCoin from "../image/Group 6.svg";
+import mainCoin from "../image/Coin.svg";
 
 function App() {
   const [score, setScore] = useState(0);
@@ -76,7 +75,7 @@ function App() {
                       <div className="score__smallBlock">
                         <img
                           alt="menu icon"
-                          src={coin}
+                          src={mainCoin}
                           className="coin__Style"
                         />
                         +1
@@ -89,7 +88,7 @@ function App() {
                   </div>
 
                   <div className="Score">
-                    <img alt="menu icon" src={mainCoin} className="" />
+                    <img alt="menu icon" src={mainCoin} className="mainCoin" />
                     {score}
                   </div>
 
