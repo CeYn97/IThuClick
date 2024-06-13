@@ -16,7 +16,8 @@ import shopIcon2 from "../image/shop-svgrepo-com 1.svg";
 import shopIcon3 from "../image/friendship-svgrepo-com 1.svg";
 import shopIcon4 from "../image/list-clipboard-svgrepo-com.svg";
 import mainVector from "../image/Main.svg";
-import mainCoin from "../image/Coin.svg";
+import coin from "../image/Монета.svg";
+import mainCoin from "../image/Group 6.svg";
 
 import { getOrCreateUser, updateUser } from "../supabaseService";
 
@@ -43,6 +44,24 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+    const handleBeforeUnload = async (event) => {
+      if (telegramId) {
+        try {
+          await updateUser(telegramId, score, level);
+        } catch (error) {
+          console.error('Error updating user on unload:', error);
+        }
+      }
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, [telegramId, score, level]);
+
   const incrementScore = (event) => {
     const newScore = score + 1;
     setScore(newScore);
@@ -61,14 +80,6 @@ function App() {
     if (newScore >= level * 100) {
       setLevel((prevLevel) => prevLevel + 1);
       setProgress(0);
-    }
-
-    // Обновляем данные пользователя в Supabase
-    if (telegramId) {
-      updateUser(telegramId, newScore, newScore >= level * 100 ? level + 1 : level)
-        .catch((error) => {
-          console.error('Error updating user:', error);
-        });
     }
   };
 
@@ -97,7 +108,7 @@ function App() {
                       <div className="score__smallBlock">
                         <img
                           alt="menu icon"
-                          src={mainCoin}
+                          src={coin}
                           className="coin__Style"
                         />
                         +1
@@ -110,7 +121,7 @@ function App() {
                   </div>
 
                   <div className="Score">
-                    <img alt="menu icon" src={mainCoin} className="mainCoin" />
+                    <img alt="menu icon" src={mainCoin} className="" />
                     {score}
                   </div>
 
