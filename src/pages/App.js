@@ -131,7 +131,7 @@ function App() {
             }
           >
             <img alt="menu icon" src={shopIcon1} className="Footer-icon" />
-            Копилка
+            Coinbox
           </NavLink>
           <NavLink
             to="/druzya"
@@ -140,7 +140,7 @@ function App() {
             }
           >
             <img alt="menu icon" src={shopIcon3} className="Footer-icon" />
-            Друзья
+            Friends
           </NavLink>
           <NavLink
             to="/merch"
@@ -149,7 +149,7 @@ function App() {
             }
           >
             <img alt="menu icon" src={shopIcon2} className="Footer-icon" />
-            Мерч
+            Merch
           </NavLink>
           <NavLink
             to="/earn"
