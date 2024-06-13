@@ -250,3 +250,41 @@ body {
   height: 78px;
   padding-right: 10px;
 }
+
+.qr-code-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 20px;
+}
+
+.qr-code-container h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.qr-code {
+  background: white;
+  padding: 20px;
+  border: 2px solid #eaeaea;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.qr-code canvas {
+  width: 256px;
+  height: 256px;
+}
+
+.qr-code-container h2 {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #333;
+}
+
+
