@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "TT Firs Neue";
+  src: url("../font/TTFirsNeue-DemiBold.eot");
+  src: local("TT Firs Neue DemiBold"), local("TTFirsNeue-DemiBold"),
+    url("../font/TTFirsNeue-DemiBold.eot?#iefix") format("embedded-opentype"),
+    url("../font/TTFirsNeue-DemiBold.woff2") format("woff2"),
+    url("../font/TTFirsNeue-DemiBold.woff") format("woff"),
+    url("../font/TTFirsNeue-DemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -7,6 +19,7 @@ body {
   margin: 0;
   background: #1c1f24;
   color: white;
+  font-family: "TT Firs Neue";
 }
 
 .App {
@@ -56,17 +69,16 @@ body {
   width: 100%;
 }
 
-
 .Small-blocks {
   display: flex;
   justify-content: space-between;
-  width: 80%; /* Ширина для центрирования */
+  width: 90%; /* Ширина для центрирования */
   margin-bottom: 20px; /* Отступ снизу */
 }
 
 .Small-block {
   background-color: #ffffff; /* Белый фон */
-  font-size: 14px;
+  font-family: "TT Firs Neue";
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -97,7 +109,7 @@ body {
 }
 
 .score__div {
-  padding-top: 5px;
+  padding-top: 3px;
 }
 
 .Click-button {
@@ -129,14 +141,18 @@ body {
   width: 100%;
 }
 
-.Score,
-.Level {
-  font-size: 16px;
-  margin-top: 10px;
-  color: #ffffff;
-  font-family: sans-serif;
+.Score {
+  display: flex;
+  align-items: center;
+  font-size: 38px;
+  font-family: "TT Firs Neue";
 }
+
 .Level {
+  font-size: 12px; /* Уменьшаем размер текста */
+  position: absolute; /* Позиционируем абсолютно */
+  top: -17px; /* Располагаем выше Progress bar */
+  right: 7px; /* По правому краю */
   color: gray;
 }
 
@@ -170,13 +186,6 @@ body {
   transition: width 0.3s ease;
 }
 
-.Level {
-  font-size: 23px; /* Уменьшаем размер текста */
-  position: absolute; /* Позиционируем абсолютно */
-  top: -50px; /* Располагаем выше Progress bar */
-  right: 10px; /* По правому краю */
-}
-
 .plus-one {
   position: absolute;
   color: #c8ff00;
@@ -206,7 +215,6 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 90%;
   gap: 10px;
-  font-family: TT Firs Neue;
 }
 
 .Footer-item {
@@ -224,7 +232,7 @@ body {
   padding: 4px;
   background-color: transparent;
   border-radius: 5px;
-  font-size: 12px;
+  font-family: "TT Firs Neue";
   line-height: 14px;
 
   filter: brightness(0.7);
@@ -234,12 +242,10 @@ body {
   filter: brightness(100);
 }
 
-
 .Footer-icon {
   height: 27px;
   width: auto;
 }
-
 
 .coin__Style {
   padding-top: 3px;

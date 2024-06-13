@@ -17,6 +17,7 @@ import shopIcon3 from "../image/friendship-svgrepo-com 1.svg";
 import shopIcon4 from "../image/list-clipboard-svgrepo-com.svg";
 import mainVector from "../image/Main.svg";
 import coin from "../image/Монета.svg";
+import mainCoin from "../image/Group 6.svg";
 
 function App() {
   const [score, setScore] = useState(0);
@@ -86,7 +87,12 @@ function App() {
                       <div className="score__div">+5к</div>
                     </div>
                   </div>
-                  <div className="Score">{score}</div>
+
+                  <div className="Score">
+                    <img alt="menu icon" src={mainCoin} className="" />
+                    10 385 456{score}
+                  </div>
+
                   <div className="Progress-bar-wrapper">
                     <div className="Progress-bar-container">
                       <div
