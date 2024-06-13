@@ -23,6 +23,36 @@ function MerchPage() {
         <div className="merch-block">
           <p>Товар 6: Информация будет добавлена позже</p>
         </div>
+        <div className="merch-block">
+          <p>Товар 7: Информация будет добавлена позже</p>
+        </div>
+        <div className="merch-block">
+          <p>Товар 8: Информация будет добавлена позже</p>
+        </div>
+        <div className="merch-block">
+          <p>Товар 9: Информация будет добавлена позже</p>
+        </div>
+        <div className="merch-block">
+          <p>Товар 10: Информация будет добавлена позже</p>
+        </div>
+        <div className="merch-block">
+          <p>Товар 11: Информация будет добавлена позже</p>
+        </div>
+        <div className="merch-block">
+          <p>Товар 12: Информация будет добавлена позже</p>
+        </div>
+        <div className="merch-block">
+          <p>Товар 13: Информация будет добавлена позже</p>
+        </div>
+        <div className="merch-block">
+          <p>Товар 14: Информация будет добавлена позже</p>
+        </div>
+        <div className="merch-block">
+          <p>Товар 15: Информация будет добавлена позже</p>
+        </div>
+        <div className="merch-block">
+          <p>Товар 16: Информация будет добавлена позже</p>
+        </div>
       </div>
     </div>
   );
