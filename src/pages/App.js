@@ -6,7 +6,7 @@ import {
   NavLink,
 } from "react-router-dom";
 
-import "./App.css";
+import "../styles/App.css";
 import FriendsPage from "./FriendsPage";
 import MerchPage from "./MerchPage";
 import EarnPage from "./EarnPage";

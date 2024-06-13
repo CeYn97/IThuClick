@@ -231,13 +231,15 @@ body {
 }
 
 .Footer-active {
-  filter: brightness(1);
+  filter: brightness(100);
 }
+
 
 .Footer-icon {
   height: 27px;
   width: auto;
 }
+
 
 .coin__Style {
   padding-top: 3px;
