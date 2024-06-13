@@ -23,7 +23,7 @@ function App() {
   useEffect(() => {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-    if (/android/i.test(userAgent) || /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    if ((/android/i.test(userAgent) || (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream))) {
       setIsMobile(true);
     } else {
       setIsMobile(false);
@@ -64,7 +64,7 @@ function App() {
   if (!isMobile) {
     return (
       <div className="qr-code-container">
-        <h1>Играй на своём мобильной устройстве</h1>
+        <h1>Играй на своём мобильном устройстве</h1>
         <div className="qr-code">
           <QRCodeCanvas value={`https://t.me/IThubclick_bot?start=PARAMETER`} size={256} />
         </div>
