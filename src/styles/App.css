@@ -102,12 +102,6 @@ body {
   justify-content: center;
 }
 
-.score__smallBlock {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .Click-button {
   position: relative;
   padding: 0px;
@@ -184,8 +178,9 @@ body {
 
 .plus-one {
   position: absolute;
-  color: #c8ff00;
-  font-size: 35px;
+  color: #88ff00;
+  font-size: 55px;
+  font-family: "TT Firs Neue";
   animation: fadeOut 1s forwards;
   pointer-events: none;
 }
