@@ -19,11 +19,30 @@ import mainVector from "../image/Main.svg";
 import coin from "../image/Монета.svg";
 import mainCoin from "../image/Group 6.svg";
 
+import { getOrCreateUser, updateUser } from "../supabaseService";
+
 function App() {
   const [score, setScore] = useState(0);
   const [progress, setProgress] = useState(0);
   const [level, setLevel] = useState(1);
   const [plusOnes, setPlusOnes] = useState([]);
+  const [telegramId, setTelegramId] = useState(null);
+
+  useEffect(() => {
+    const id = window?.Telegram?.WebApp?.initDataUnsafe?.user?.id;
+    setTelegramId(id);
+    if (id) {
+      getOrCreateUser(id)
+        .then((userData) => {
+          setScore(userData.coins);
+          setLevel(userData.level);
+          setProgress((userData.coins % 100) / 100 * 100);
+        })
+        .catch((error) => {
+          console.error('Error fetching or creating user:', error);
+        });
+    }
+  }, []);
 
   const incrementScore = (event) => {
     const newScore = score + 1;
@@ -39,15 +58,20 @@ function App() {
     const y = clientY - buttonRect.top;
     const newPlusOne = { id: Date.now(), x, y };
     setPlusOnes([...plusOnes, newPlusOne]);
-  };
 
-  useEffect(() => {
-    if (score >= level * 100) {
+    if (newScore >= level * 100) {
       setLevel((prevLevel) => prevLevel + 1);
       setProgress(0);
     }
-    document.title = "ClickerHub";
-  }, [score, level]);
+
+    // Обновляем данные пользователя в Supabase
+    if (telegramId) {
+      updateUser(telegramId, newScore, newScore >= level * 100 ? level + 1 : level)
+        .catch((error) => {
+          console.error('Error updating user:', error);
+        });
+    }
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -55,8 +79,6 @@ function App() {
     }, 1000);
     return () => clearInterval(timer);
   }, [plusOnes]);
-
-  // const userId = window?.Telegram?.WebApp?.initDataUnsafe?.user?.id;
 
   return (
     <Router>
@@ -167,3 +189,4 @@ function App() {
 }
 
 export default App;
+
