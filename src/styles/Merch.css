@@ -11,9 +11,15 @@
 }
 
 .merch-block {
-  flex: 1 1 100%;
-  border: 1px solid #ccc;
-  padding: 10px;
+    background-color: #ffffff;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 48%;
+    text-align: center;
+    background-color: #282b30;
+    border-color: #2d2f35;
 }
 
 @media only screen and (max-width: 600px) {
