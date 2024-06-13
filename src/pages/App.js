@@ -1,32 +1,58 @@
-import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  NavLink,
+} from "react-router-dom";
 import { QRCodeCanvas } from "qrcode.react";
+
 import "../styles/App.css";
 import FriendsPage from "./FriendsPage";
 import MerchPage from "./MerchPage";
 import EarnPage from "./EarnPage";
+
 import shopIcon1 from "../image/Vector.svg";
 import shopIcon2 from "../image/shop-svgrepo-com 1.svg";
 import shopIcon3 from "../image/friendship-svgrepo-com 1.svg";
 import shopIcon4 from "../image/list-clipboard-svgrepo-com.svg";
 import mainVector from "../image/Main.svg";
+import mainCoin from "../image/Coin.svg";
 import coin from "../image/Монета.svg";
-import mainCoin from "../image/Group 6.svg";
+
+import { getOrCreateUser, updateUser } from "../supabaseService";
 
 function App() {
   const [score, setScore] = useState(0);
   const [progress, setProgress] = useState(0);
   const [level, setLevel] = useState(1);
   const [plusOnes, setPlusOnes] = useState([]);
+  const [telegramId, setTelegramId] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-    if ((/android/i.test(userAgent) || (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream))) {
+    if (/android/i.test(userAgent) || (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream)) {
       setIsMobile(true);
     } else {
       setIsMobile(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    const id = window?.Telegram?.WebApp?.initDataUnsafe?.user?.id;
+    setTelegramId(id);
+    if (id) {
+      getOrCreateUser(id)
+        .then((userData) => {
+          setScore(userData.coins);
+          setLevel(userData.level);
+          setProgress((userData.coins % 100) / 100 * 100);
+        })
+        .catch((error) => {
+          console.error('Error fetching or creating user:', error);
+        });
     }
   }, []);
 
@@ -44,15 +70,20 @@ function App() {
     const y = clientY - buttonRect.top;
     const newPlusOne = { id: Date.now(), x, y };
     setPlusOnes([...plusOnes, newPlusOne]);
-  };
 
-  useEffect(() => {
-    if (score >= level * 100) {
+    if (newScore >= level * 100) {
       setLevel((prevLevel) => prevLevel + 1);
       setProgress(0);
     }
-    document.title = "ClickerHub";
-  }, [score, level]);
+
+    // Обновляем данные пользователя в Supabase
+    if (telegramId) {
+      updateUser(telegramId, newScore, newScore >= level * 100 ? level + 1 : level)
+        .catch((error) => {
+          console.error('Error updating user:', error);
+        });
+    }
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -104,7 +135,7 @@ function App() {
                   </div>
 
                   <div className="Score">
-                    <img alt="menu icon" src={mainCoin} className="" />
+                    <img alt="menu icon" src={mainCoin} className="mainCoin" />
                     {score}
                   </div>
 
@@ -182,4 +213,5 @@ function App() {
 }
 
 export default App;
+
 
