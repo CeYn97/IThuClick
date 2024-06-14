@@ -205,7 +205,7 @@ body {
   margin-top: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 90%;
-  gap: 10px;
+  gap: 5px;
 }
 
 .Footer-item {
@@ -257,7 +257,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #f8f8f8;
+  background-color: #161616;
   text-align: center;
   padding: 20px;
 }
@@ -265,7 +265,7 @@ body {
 .qr-code-container h1 {
   margin-bottom: 20px;
   font-size: 24px;
-  color: #333;
+  color: #ffffff;
 }
 
 .qr-code {
@@ -284,7 +284,5 @@ body {
 .qr-code-container h2 {
   margin-top: 20px;
   font-size: 20px;
-  color: #333;
+  color: #ffffff;
 }
-
-

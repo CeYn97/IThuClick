@@ -18,7 +18,6 @@ import shopIcon3 from "../image/friendship-svgrepo-com 1.svg";
 import shopIcon4 from "../image/list-clipboard-svgrepo-com.svg";
 import mainVector from "../image/Main.svg";
 import mainCoin from "../image/Coin.svg";
-import coin from "../image/Монета.svg";
 
 import { getOrCreateUser, updateUser } from "../supabaseService";
 
@@ -33,7 +32,10 @@ function App() {
   useEffect(() => {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-    if (/android/i.test(userAgent) || (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream)) {
+    if (
+      /android/i.test(userAgent) ||
+      (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream)
+    ) {
       setIsMobile(true);
     } else {
       setIsMobile(false);
@@ -48,10 +50,10 @@ function App() {
         .then((userData) => {
           setScore(userData.coins);
           setLevel(userData.level);
-          setProgress((userData.coins % 100) / 100 * 100);
+          setProgress(((userData.coins % 100) / 100) * 100);
         })
         .catch((error) => {
-          console.error('Error fetching or creating user:', error);
+          console.error("Error fetching or creating user:", error);
         });
     }
   }, []);
@@ -78,10 +80,13 @@ function App() {
 
     // Обновляем данные пользователя в Supabase
     if (telegramId) {
-      updateUser(telegramId, newScore, newScore >= level * 100 ? level + 1 : level)
-        .catch((error) => {
-          console.error('Error updating user:', error);
-        });
+      updateUser(
+        telegramId,
+        newScore,
+        newScore >= level * 100 ? level + 1 : level
+      ).catch((error) => {
+        console.error("Error updating user:", error);
+      });
     }
   };
 
@@ -97,7 +102,10 @@ function App() {
       <div className="qr-code-container">
         <h1>Играй на своём мобильном устройстве</h1>
         <div className="qr-code">
-          <QRCodeCanvas value={`https://t.me/IThubclick_bot?start=PARAMETER`} size={256} />
+          <QRCodeCanvas
+            value={`https://t.me/IThubclick_bot?start=PARAMETER`}
+            size={256}
+          />
         </div>
         <h2>@IThubclick_bot</h2>
       </div>
@@ -122,7 +130,7 @@ function App() {
                       <div className="score__smallBlock">
                         <img
                           alt="menu icon"
-                          src={coin}
+                          src={mainCoin}
                           className="coin__Style"
                         />
                         +1
@@ -213,5 +221,3 @@ function App() {
 }
 
 export default App;
-
-
