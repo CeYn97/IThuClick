@@ -4,7 +4,7 @@ import "../styles/FriendsPage.css";
 function FriendsPage() {
   return (
     <div>
-      <h2>Friends</h2>
+      <h2>Earn</h2>
       <p>Тут что-то будет...</p>
     </div>
   );
